@@ -1,0 +1,54 @@
+<!Doctype html>
+<html lang="de"
+<head>
+<meta chartest="utf-8">
+<title>Spiel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <h1>Pong</h1>
+<canvas tabindex="1" width="640" height="480"></canvas>
+<script src="scripts/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+ var canvas = $("canvas")[0]
+ var context = canvas.getContext("2d")
+
+var spielfeld = {
+ farbe: "yellow",
+ breite: 640,
+ hoehe: 480
+}
+
+var ball ={ 
+ x:320,
+ y: 240,
+ farbe: "green",
+ breite: 50, 
+ hoehe: 50,
+ x_richtung: 1,
+ y_richtung: 1
+}
+
+
+
+var interval = 1000/60
+setInterval(function() {
+if (ball.y> canvas.height)
+}
+else if (ball.y<0){
+ball.yrichtung=1
+}
+if (ball.x >canvas.widht) {
+ ball.x_< -1
+}
+ context.fillStyle = spielfeld.farbe
+ context.fillRect(0, 0, spielfeld.breite, spielfeld.hoehe)
+
+ ball.x = ball.x + 2* ball.x_richtung
+ ball.y = ball.y + 2* ball.y_richtung
+ context.fillStyle = ball.farbe
+ context.fillRect (ball.x, ball.y, ball.breite, ball.hoehe)
+}, interval)
+</script>
+</body>
+</html>
